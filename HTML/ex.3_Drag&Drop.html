@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Drag and Drop</title>
+  <style>
+    #div1 {
+      width: 200px;
+      height: 210px;
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid black;
+    }
+
+  </style>
+  <script>
+    function allowDrop(ev) {
+      ev.preventDefault();
+    }
+
+    function drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
+    }
+
+  </script>
+</head>
+
+<body>
+  <p>Drag the products you want to buy into the shopping bag</p>
+  <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"><b>Shopping Basket</b></div><br>
+
+  <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><b>Products:</b>
+    <p id="iPphoneX" draggable="true" ondragstart="drag(event)">iPhone X</p>
+    <p id="MotoX" draggable="true" ondragstart="drag(event)">Motorola Moto X</p>
+    <p id="J5" draggable="true" ondragstart="drag(event)">Samsung Galaxy J5</p>
+    <p id="Nokia8" draggable="true" ondragstart="drag(event)">Nokia 8</p>
+  </div>
+  <footer>
+    <p>&copy; Felix Bloch, 2019<br />
+      <a href="http://validator.w3.org/check?uri=referer">
+                <img style="border:none;height:31px;width:31px;text-decoration:none;" 
+                    src="http://myy.haaga-helia.fi/~valju/ValidatorLogos/html_logo_grayscale_31.png" 
+                    alt="Valid HTML"  /></a>
+
+      <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                <img style="border:none;width:88px;height:31px;text-decoration:none;"
+                     src="http://myy.haaga-helia.fi/~valju/ValidatorLogos/css_logo_grayscale_31.png"
+                     alt="Valid CSS" /></a>
+    </p>
+  </footer>
+</body>
+
+</html>

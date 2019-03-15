@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Using jquery</title>  
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+    <div id="nanogallery2">gallery_made_with_nanogallery2</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link  href="https://unpkg.com/nanogallery2@2.3.0/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css">
+<script  type="text/javascript" src="https://unpkg.com/nanogallery2@2.3.0/dist/jquery.nanogallery2.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $("#nanogallery2").nanogallery2( {
+        thumbnailHeight:  150,
+        thumbnailWidth:   150,
+        itemsBaseURL: "https://images2.pics4learning.com/catalog/",
+        
+        items: [
+        {src: "h/himejicastle.jpg", srct: "h/himejicastle.jpg", title: "Himejicastle, Japan"},
+        {src: "s/salzburgresidence.jpg", srct: "s/salzburgresidence.jpg", title: "Salzburgresidence, Austria"},
+        {src: "s/stairsinvienna.jpg", srct: "s/stairsinvienna.jpg", title: "Stairsinvienna , Austria"},
+        {src: "g/germany2008370.jpg", srct: "g/germany2008370.jpg", title: "Germany"},
+        {src: "e/earth_from_space.jpg", srct: "e/earth_from_space.jpg", title: "Earth from Space"},
+        {src: "c/carina_ngc3372.jpg", srct: "c/carina_ngc3372.jpg", title: "Carina"},
+        {src: "n/neptune.jpg", srct: "n/neptune.jpg", title: "Neptune"},
+        {src: "c/colombialaunch.jpg", srct: "c/colombialaunch.jpg", title: "Colombialaunch"},
+        {src: "a/apollo_csm.jpg", srct: "a/apollo_csm.jpg", title: "Apollo CSM"},
+        {src: "i/img_3591glaciernatlpark.jpg", srct: "i/img_3591glaciernatlpark.jpg", title: "Glacier Netional Park"},
+        {src: "d/darwinisland.jpg", srct: "d/darwinisland.jpg", title: "Darwin Island"},
+            ]
+        });
+  });
+</script>
+</body>
+</html>

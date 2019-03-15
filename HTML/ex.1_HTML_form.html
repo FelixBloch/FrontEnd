@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>HTML form</title>
+  <style>
+    input {
+      width: 97%;
+      padding: 4px;
+      margin: 10px;
+    }
+
+    select {
+      width: 95%;
+      padding: 4px;
+      margin: 10px 10px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <form>
+    First Name<br>
+    <input type="text" name="firstname"><br> Last Name<br>
+    <input type="text" name="lasttname"><br> Date of Birth<br>
+    <input type="date" name="bday"><br> Gender
+    <br>
+    <select name="gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select><br> Email
+    <br>
+    <input type="email" name="email"><br> Homepage
+    <br>
+    <input type="url" name="homepage"><br> Favourite Colour<br>
+    <input type="color" name="favcolor"><br>
+    <input type="submit" value="Save">
+  </form>
+  <footer>
+    <p>&copy; Felix Bloch, 2019<br />
+      <a href="http://validator.w3.org/check?uri=referer">
+                <img style="border:none;height:31px;width:31px;text-decoration:none;" 
+                    src="http://myy.haaga-helia.fi/~valju/ValidatorLogos/html_logo_grayscale_31.png" 
+                    alt="Valid HTML"  /></a>
+
+      <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                <img style="border:none;width:88px;height:31px;text-decoration:none;"
+                     src="http://myy.haaga-helia.fi/~valju/ValidatorLogos/css_logo_grayscale_31.png"
+                     alt="Valid CSS" /></a>
+    </p>
+  </footer>
+</body>
+
+</html>

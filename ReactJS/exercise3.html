@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>React exercise 3</title>
+  </head>
+  <body>
+    <!-- Root container for react components -->
+    <div id='root'></div>
+    
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    
+    <script type="text/babel">
+      class RestOpenWeatherMap extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {temperature: '', weather: '', icon: ''};
+        }
+        componentDidMount() {
+          fetch('http://api.openweathermap.org/data/2.5/weather?q=Helsinki&APPID=ad52e75cb438045825248566763c0955&units=metric')
+          .then((response) => response.json()) 
+          .then((responseData) => { 
+             console.log(responseData);
+              this.setState({ 
+                temperature: responseData.main.temp,
+                weather: responseData.weather[0].description,
+                icon: responseData.weather[0].icon 
+              }); 
+          });
+        }
+        
+        render() { 
+          const imgurl = "http://openweathermap.org/img/w/" + this.state.icon + ".png";
+            if(this.state.icon !== '') {
+              return (
+                <div>
+                  <div>Temperature: {this.state.temperature} &#8451;</div>
+                  <div>Weather: {this.state.weather}</div>
+                  <div>
+                    <img src={imgurl} />
+                  </div>
+                </div>
+              );
+            }
+            else {
+              return <div></div>
+            }
+          }
+      }
+      
+      ReactDOM.render(<RestOpenWeatherMap />, document.getElementById('root'));
+    </script>
+  </body>
+</html>

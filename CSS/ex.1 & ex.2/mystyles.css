@@ -1,0 +1,38 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-image: url(white-waves.png);
+}
+
+section {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    margin-left: 5%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    color: red;
+    text-transform: uppercase;
+}
+
+img {
+    width: 50%;
+}
+
+figcaption {
+    color: darkblue;
+}
+
+.center {
+    margin: auto;
+    width: 60%;
+    border: 3px solid white;
+    padding: 10px;
+}

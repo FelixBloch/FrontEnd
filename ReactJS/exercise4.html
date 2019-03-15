@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>React exercise 4</title>
+  </head>
+  <body>
+    <!-- Root container for react components -->
+    <div id='root'></div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    
+    <script type="text/babel">
+      class GithubRepositoryList extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {listItems: []};
+        }
+   
+        componentDidMount() {
+          fetch('https://api.github.com/search/repositories?q=react')
+          .then((response) => response.json()) 
+          .then((responseData) => { 
+            this.setState({ 
+              listItems: responseData.items,
+            }); 
+          })        
+        }
+
+        doFetch = () => {
+            const url = 'https://api.github.com/search/repositories?q=' + this.state.inputVal;
+            fetch(url)
+            .then((response) => response.json()) 
+            .then((responseData) => { 
+                this.setState({ 
+                    listItems: responseData.items,
+                }); 
+            }) 
+        }
+
+        inputChanged = (event) => {
+            this.setState({inputVal: event.target.value});
+        };
+        
+        render() {
+          const itemRows = this.state.listItems.map((repository, index) => 
+              <tr key={index}>
+                <td>{repository.full_name}</td>
+                <td><a href={repository.html_url}>{repository.html_url}</a></td>
+              </tr>
+            )
+           
+          return (
+            <div>
+              <h2>Repositories</h2>
+              <input type="text" onChange={this.inputChanged} value={this.state.inputVal}/>
+              <button onClick={this.doFetch}>Search</button>
+              <table>
+                <tbody>
+                  <tr><th>Name</th><th>URL</th></tr>
+                  {itemRows}
+                </tbody>
+              </table>
+            </div>
+          );
+        }
+      }
+      ReactDOM.render(<GithubRepositoryList />, document.getElementById('root'));
+    </script>
+  </body>
+</html>

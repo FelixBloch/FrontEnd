@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Using jquery</title>  
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <p id="txt1"><b>Chapter 1.</b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a mi nunc. Vestibulum blandit ligula non ex elementum sollicitudin. Ut et dignissim dolor. Integer sed ipsum at tortor interdum accumsan in id magna. Suspendisse commodo nunc et ante efficitur, ac laoreet leo lobortis. Phasellus molestie iaculis metus, vel malesuada nulla sodales id. Aliquam at interdum eros, eget varius ante. Suspendisse auctor purus ut porta euismod. Proin dictum felis sit amet turpis rhoncus, ut dignissim lacus mollis. Quisque in sem odio. Morbi a turpis ut leo efficitur mollis id sed lacus. Duis consequat massa sapien, at accumsan felis iaculis vitae. Aliquam.</p>
+    <p id="txt2"><b>Chapter 2.</b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a mi nunc. Vestibulum blandit ligula non ex elementum sollicitudin. Ut et dignissim dolor. Integer sed ipsum at tortor interdum accumsan in id magna. Suspendisse commodo nunc et ante efficitur, ac laoreet leo lobortis. Phasellus molestie iaculis metus, vel malesuada nulla sodales id. Aliquam at interdum eros, eget varius ante. Suspendisse auctor purus ut porta euismod. Proin dictum felis sit amet turpis rhoncus, ut dignissim lacus mollis. Quisque in sem odio. Morbi a turpis ut leo efficitur mollis id sed lacus. Duis consequat massa sapien, at accumsan felis iaculis vitae. Aliquam.</p>
+
+    <button id="btn1">Toggle Chapter 1</button>
+    <button id="btn2">Fade out both</button>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function() {
+    $("#btn1").click(function(){
+        $("#txt1").toggle();
+    })
+    $("#btn2").click(function(){
+        $("#txt1").fadeToggle();
+        $("#txt2").fadeToggle();
+    })
+  });
+</script>
+</body>
+</html>
